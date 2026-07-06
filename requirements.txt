@@ -1,0 +1,118 @@
+# GHUMA Supermarket Management GUI - System Requirements
+
+## Java & Build Environment
+
+### Required
+- Java Development Kit (JDK): 17 or higher
+  - Download: https://www.oracle.com/java/technologies/downloads/#java17
+  - Verify: java -version
+- Maven: 3.6 or higher
+  - Download: https://maven.apache.org/download.cgi
+  - Verify: mvn -v
+
+### Optional
+- IDE (IntelliJ IDEA, Eclipse, VS Code, or NetBeans)
+- Git: 2.30+ (for cloning the repository)
+  - Download: https://git-scm.com/
+
+## Database Requirements
+
+### Required
+- MySQL Server: 5.7 or 8.0+
+  - Download: https://dev.mysql.com/downloads/mysql/
+  - Verify: mysql --version
+  - Create database: supermarket (or custom name)
+
+### Supported Databases
+- MySQL 5.7+
+- MySQL 8.0+
+- MariaDB 10.5+ (compatible)
+
+## Project Dependencies (Auto-installed by Maven)
+
+### Core ORM & Database
+- Hibernate ORM: 6.4.4.Final
+- MySQL Connector/J: 8.3.0
+- Jakarta Persistence API: 3.1.0
+
+### Logging
+- SLF4J Simple: 2.0.12
+
+(See pom.xml for detailed dependency information)
+
+## System Resources
+
+### Minimum
+- RAM: 512 MB
+- Disk Space: 500 MB (for Maven dependencies and build artifacts)
+- CPU: Dual-core 1.5 GHz
+
+### Recommended
+- RAM: 2 GB
+- Disk Space: 2 GB
+- CPU: Multi-core processor
+
+## Operating System
+
+✅ Windows 10/11 or later
+✅ macOS 10.15 or later
+✅ Linux (Ubuntu 20.04+, CentOS 7+, Fedora 30+)
+
+## Development Setup Checklist
+
+- [ ] Install JDK 17
+- [ ] Install Maven 3.6+
+- [ ] Install MySQL Server 5.7+
+- [ ] Clone the repository
+- [ ] Update hibernate.cfg.xml with database credentials
+- [ ] Create supermarket database
+- [ ] Run: mvn clean package
+- [ ] Run: java -jar target/ghuma-supermarket-1.0-SNAPSHOT.jar
+- [ ] Verify the application launches
+
+## Environment Variables (Optional but Recommended)
+
+For secure configuration, set these environment variables before running:
+
+```bash
+export DB_URL=jdbc:mysql://localhost:3306/supermarket
+export DB_USER=root
+export DB_PASSWORD=your_password
+export JAVA_TOOL_OPTIONS=-Xmx1024m
+```
+
+## Maven Build Profile Requirements
+
+No additional profiles required. Standard build:
+```bash
+mvn clean package -DskipTests
+```
+
+## Network Requirements
+
+- Internet connection (for Maven to download dependencies on first build)
+- MySQL server accessible on localhost:3306 or configured host
+
+## Troubleshooting Requirements
+
+If you encounter issues:
+- Verify Java version: java -version (should show 17 or higher)
+- Verify Maven version: mvn -v
+- Verify MySQL is running: mysql -u root -p
+- Verify database exists: SHOW DATABASES;
+- Check logs in target/classes/
+
+## Additional Tools (Optional)
+
+- MySQL Workbench: Visual database management
+  - Download: https://www.mysql.com/products/workbench/
+- DBeaver: Alternative database IDE
+  - Download: https://dbeaver.io/
+- Git: Version control
+  - Download: https://git-scm.com/
+
+---
+
+For detailed setup instructions, see README.md
+
+Last Updated: 2026
